@@ -29,7 +29,7 @@ from transformers import WhisperForConditionalGeneration, WhisperProcessor
 
 HF_MODEL_ID = "rearleg/SeloWhisper-ko-disfluency"
 HERE = Path(__file__).parent
-SAMPLE_AUDIO = HERE / "samples" / "명지대1길9.wav"
+SAMPLE_AUDIO = HERE / "samples" / "demo.wav"
 
 DISFLUENCY_TOKENS: tuple[str, ...] = (
     "<ah>", "<uh>", "<um>", "<gue>", "<jeo>",

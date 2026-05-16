@@ -32,7 +32,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Browser opens at `http://localhost:8501`. Use the **"🎧 샘플 오디오 사용"** button to test the bundled sample (`samples/명지대1길9.wav`), or upload your own clip.
+Browser opens at `http://localhost:8501`. Use the **"🎧 샘플 오디오 사용"** button to test the bundled sample (`samples/demo.wav`), or upload your own clip.
 
 > First launch: pulls ~3 GB of model weights into `~/.cache/huggingface/hub/`. Re-runs are instant.
 
@@ -41,7 +41,7 @@ Browser opens at `http://localhost:8501`. Use the **"🎧 샘플 오디오 사�
 ## CLI Usage
 
 ```bash
-python examples/transcribe.py samples/명지대1길9.wav
+python examples/transcribe.py samples/demo.wav
 ```
 
 Output (transcription to stdout, diagnostics to stderr):
@@ -89,7 +89,7 @@ MODEL_ID = "rearleg/SeloWhisper-ko-disfluency"
 processor = WhisperProcessor.from_pretrained(MODEL_ID)
 model = WhisperForConditionalGeneration.from_pretrained(MODEL_ID).eval()
 
-audio, sr = sf.read("samples/명지대1길9.wav", dtype="float32", always_2d=True)
+audio, sr = sf.read("samples/demo.wav", dtype="float32", always_2d=True)
 audio = audio.mean(axis=1) if audio.shape[1] > 1 else audio[:, 0]
 wav = torch.from_numpy(np.ascontiguousarray(audio)).unsqueeze(0)
 if sr != 16000:
@@ -123,7 +123,7 @@ selowhisper/
 ├── examples/
 │   └── transcribe.py       # Headless CLI
 ├── samples/
-│   └── 명지대1길9.wav        # Bundled audio sample for quick testing
+│   └── demo.wav        # Bundled audio sample for quick testing
 ├── requirements.txt
 ├── LICENSE                 # MIT
 └── README.md
