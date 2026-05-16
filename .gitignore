@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+*.egg
+build/
+dist/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual envs / secrets
+.env
+.envrc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Hugging Face / Transformers caches (don't commit downloaded models)
+.cache/
+hf_cache/
+
+# Local model artifacts (in case anyone symlinks the HF cache here)
+model/
+models/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.gguf
+
+# Audio scratch — keep only curated samples under samples/
+*.tmp.wav
+*.scratch.wav
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

@@ -1,0 +1,9 @@
+streamlit>=1.30
+transformers>=4.46
+torch>=2.1
+torchaudio>=2.1
+huggingface_hub>=0.25
+safetensors>=0.4
+sentencepiece>=0.2
+soundfile>=0.12
+numpy>=1.24
